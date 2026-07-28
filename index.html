@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfólio Leonardo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+  <button id="toggleTheme">🌙 Alternar Tema</button>
+  <img src="assets/perfil.png" alt="Foto de Leonardo" class="perfil">
+  <h1>Olá, eu sou Leonardo 👋</h1>
+  <p>Técnico em Desenvolvimento de Sistemas</p>
+</header>
+
+
+  <section id="sobre">
+  <h2>Sobre mim</h2>
+  <p>
+    Sou Leonardo Martins, técnico em Desenvolvimento de Sistemas e apaixonado por tecnologia. 
+    Tenho experiência em criar soluções digitais que unem design moderno e código eficiente. 
+    Meu foco é transformar ideias em projetos funcionais, explorando linguagens como HTML, CSS, 
+    JavaScript, Python e Java. 
+  </p>
+  <p>
+    Estou sempre em busca de novos desafios e oportunidades para aprender, colaborar e evoluir 
+    como desenvolvedor. Meu objetivo é construir aplicações que façam diferença e tragam impacto 
+    positivo para pessoas e empresas.
+  </p>
+</section>
+
+
+  <section id="habilidades">
+    <h2>Habilidades</h2>
+    <div class="skills">
+      <span onclick="mostrarInfo('html')"><img src="assets/html.png" alt="HTML5" class="icon"> HTML</span>
+      <span onclick="mostrarInfo('css')"><img src="assets/css.png" alt="CSS3" class="icon"> CSS</span>
+      <span onclick="mostrarInfo('js')"><img src="assets/js.png" alt="JavaScript" class="icon"> JavaScript</span>
+      <span onclick="mostrarInfo('python')"><img src="assets/python.png" alt="Python" class="icon"> Python</span>
+      <span onclick="mostrarInfo('java')"><img src="assets/java.png" alt="Java" class="icon"> Java</span>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <h2>Meus Projetos</h2>
+    <ul id="listaProjetos"></ul>
+  </section>
+
+  <footer>
+  <p>📫 Contato: leonardommp08@email.com</p>
+  <p>
+    <a href="https://github.com/LeonMMP" target="_blank">GitHub</a> | 
+    <a href="https://www.linkedin.com/in/leonardo-martins-0269b33a4" target="_blank">LinkedIn</a>
+  </p>
+</footer>
+
+
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="fechar" onclick="fecharModal()">&times;</span>
+      <h3 id="modalTitulo"></h3>
+      <img id="modalIcon" class="icon-modal" alt="">
+      <p id="modalTexto"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
