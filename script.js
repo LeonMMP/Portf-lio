@@ -1,89 +1,195 @@
-// =====================
-// Projetos
-// =====================
-const projetos = [
-  { nome: "CRUD em Flask", link: "#", img: "crud.png" },
-  { nome: "To-do List em JS", link: "#", img: "todo.png" },
-  { nome: "Landing Page Responsiva", link: "#", img: "landing.png" }
+// =============================
+// MENU MOBILE
+// =============================
+
+const menuBtn = document.getElementById("menu-btn");
+const nav = document.querySelector("nav");
+
+menuBtn.addEventListener("click", () => {
+    nav.classList.toggle("active");
+
+    if (nav.classList.contains("active")) {
+        menuBtn.innerHTML = '<i class="ri-close-line"></i>';
+    } else {
+        menuBtn.innerHTML = '<i class="ri-menu-line"></i>';
+    }
+});
+
+// Fecha o menu ao clicar em um link
+
+document.querySelectorAll("nav a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        nav.classList.remove("active");
+
+        menuBtn.innerHTML = '<i class="ri-menu-line"></i>';
+
+    });
+
+});
+
+// =============================
+// BOTÃO VOLTAR AO TOPO
+// =============================
+
+const toTop = document.getElementById("toTop");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 400) {
+
+        toTop.classList.add("active");
+
+    } else {
+
+        toTop.classList.remove("active");
+
+    }
+
+});
+
+toTop.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+});
+
+// =============================
+// HEADER
+// =============================
+
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 50) {
+
+        header.style.background = "rgba(10,10,10,.95)";
+        header.style.boxShadow = "0 5px 30px rgba(0,0,0,.35)";
+
+    } else {
+
+        header.style.background = "rgba(10,10,10,.65)";
+        header.style.boxShadow = "none";
+
+    }
+
+});
+
+// =============================
+// ANIMAÇÃO AO SCROLL
+// =============================
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+}, {
+    threshold: 0.15
+});
+
+document.querySelectorAll("section").forEach(section => {
+
+    section.classList.add("fade-up");
+
+    observer.observe(section);
+
+});
+
+// =============================
+// EFEITO PARALLAX NA IMAGEM
+// =============================
+
+const heroImage = document.querySelector(".image-box");
+
+document.addEventListener("mousemove", (e) => {
+
+    const x = (window.innerWidth / 2 - e.clientX) / 45;
+
+    const y = (window.innerHeight / 2 - e.clientY) / 45;
+
+    heroImage.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
+
+});
+
+// =============================
+// EFEITO NOS CARDS
+// =============================
+
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card => {
+
+    card.addEventListener("mousemove", (e) => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+
+        const y = e.clientY - rect.top;
+
+        card.style.background =
+            `radial-gradient(circle at ${x}px ${y}px,
+            rgba(155,92,255,.18),
+            rgba(255,255,255,.03))`;
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.background = "rgba(255,255,255,.03)";
+
+    });
+
+});
+
+// =============================
+// TEXTO DIGITANDO
+// =============================
+
+const title = document.querySelector(".mini-title");
+
+const words = [
+
+    "BACKEND • FULL STACK • APIs REST",
+
+    "NODE.JS • EXPRESS • MYSQL",
+
+    "PRISMA ORM • JAVASCRIPT"
+
 ];
 
-const lista = document.getElementById("listaProjetos");
+let index = 0;
 
-projetos.forEach(p => {
-  const li = document.createElement("li");
-  li.innerHTML = `
-    <img src="assets/${p.img}" alt="${p.nome}">
-    <a href="${p.link}" target="_blank">${p.nome}</a>
-  `;
-  lista.appendChild(li);
-});
+setInterval(() => {
 
-// =====================
-// Habilidades com modal
-// =====================
-function mostrarInfo(habilidade) {
-  const titulo = document.getElementById("modalTitulo");
-  const texto = document.getElementById("modalTexto");
-  const icon = document.getElementById("modalIcon");
-  const modal = document.getElementById("modal");
+    index++;
 
-  const infos = {
-    html: {
-      titulo: "HTML5",
-      texto: "HTML é a linguagem de marcação usada para estruturar páginas web.",
-      icon: "assets/html.png"
-    },
-    css: {
-      titulo: "CSS3",
-      texto: "CSS é usado para estilizar páginas, definindo cores, layouts e responsividade.",
-      icon: "assets/css.png"
-    },
-    js: {
-      titulo: "JavaScript",
-      texto: "JavaScript adiciona interatividade e lógica às páginas web.",
-      icon: "assets/js.png"
-    },
-    python: {
-      titulo: "Python",
-      texto: "Python é uma linguagem versátil, ótima para back-end, ciência de dados e automação.",
-      icon: "assets/python.png"
-    },
-    java: {
-      titulo: "Java",
-      texto: "Java é robusta e muito usada em sistemas corporativos, aplicações Android e grandes sistemas distribuídos.",
-      icon: "assets/java.png"
-    }
-  };
+    if (index >= words.length) index = 0;
 
-  // Atualiza conteúdo do modal
-  titulo.textContent = infos[habilidade].titulo;
-  texto.textContent = infos[habilidade].texto;
-  icon.src = infos[habilidade].icon;
-  icon.alt = infos[habilidade].titulo;
+    title.style.opacity = 0;
 
-  // Exibe modal
-  modal.style.display = "block";
-}
+    setTimeout(() => {
 
-function fecharModal() {
-  document.getElementById("modal").style.display = "none";
-}
+        title.innerText = words[index];
 
-// Fechar modal clicando fora
-window.onclick = function(event) {
-  const modal = document.getElementById("modal");
-  if (event.target === modal) {
-    modal.style.display = "none";
-  }
-};
+        title.style.opacity = 1;
 
-// =====================
-// Alternar tema claro/escuro
-// =====================
-const toggleBtn = document.getElementById("toggleTheme");
-toggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  toggleBtn.textContent = document.body.classList.contains("dark") 
-    ? "☀️ Alternar Tema" 
-    : "🌙 Alternar Tema";
-});
+    }, 300);
+
+}, 3000);

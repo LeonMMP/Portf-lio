@@ -1,71 +1,392 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Portfólio Leonardo</title>
-  <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Leonardo.dev | Backend Developer</title>
+
+    <meta name="description"
+        content="Portfólio de Leonardo Martins - Desenvolvedor Backend especializado em Node.js, APIs REST e Banco de Dados.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Remix Icons -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+        rel="stylesheet">
+
 </head>
+
 <body>
-  <header>
-  <button id="toggleTheme">🌙 Alternar Tema</button>
-  <img src="assets/perfil.png" alt="Foto de Leonardo" class="perfil">
-  <h1>Olá, eu sou Leonardo 👋</h1>
-  <p>Técnico em Desenvolvimento de Sistemas</p>
-</header>
 
+    <!-- Glow -->
 
-  <section id="sobre">
-  <h2>Sobre mim</h2>
-  <p>
-    Sou Leonardo Martins, técnico em Desenvolvimento de Sistemas e apaixonado por tecnologia. 
-    Tenho experiência em criar soluções digitais que unem design moderno e código eficiente. 
-    Meu foco é transformar ideias em projetos funcionais, explorando linguagens como HTML, CSS, 
-    JavaScript, Python e Java. 
-  </p>
-  <p>
-    Estou sempre em busca de novos desafios e oportunidades para aprender, colaborar e evoluir 
-    como desenvolvedor. Meu objetivo é construir aplicações que façam diferença e tragam impacto 
-    positivo para pessoas e empresas.
-  </p>
+    <div class="blur blur1"></div>
+
+    <div class="blur blur2"></div>
+
+    <!-- Header -->
+
+    <header id="header">
+
+        <div class="container nav">
+
+            <a href="#" class="logo">
+                LEONARDO<span>.DEV</span>
+            </a>
+
+            <nav>
+
+                <ul id="menu">
+
+                    <li><a href="#sobre">Sobre</a></li>
+
+                    <li><a href="#stack">Stack</a></li>
+
+                    <li><a href="#projetos">Projetos</a></li>
+
+                    <li><a href="#contato">Contato</a></li>
+
+                </ul>
+
+            </nav>
+
+            <div class="nav-buttons">
+
+                <a href="#" class="btn-cv">
+                    Currículo
+                </a>
+
+                <button id="menu-btn">
+
+                    <i class="ri-menu-line"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+        <div class="container hero-grid">
+
+            <div class="hero-text">
+
+                <span class="mini-title">
+
+                    BACKEND • FULL STACK • APIs REST
+
+                </span>
+
+                <h1>
+
+                    Developer <br>
+
+                    <span>Backend</span>
+
+                    & Full Stack
+
+                </h1>
+
+                <p>
+
+                    Desenvolvendo APIs modernas, bancos de dados,
+                    aplicações web e soluções escaláveis utilizando
+                    JavaScript, Node.js, Express, Prisma e MySQL.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#projetos" class="btn">
+
+                        Ver Projetos
+
+                    </a>
+
+                    <a href="#" class="btn-outline">
+
+                        Download CV
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+
+                <div class="image-box">
+
+                    <img src="assets/darksouls.png" alt="Dark Souls">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Sobre -->
+
+    <section id="sobre">
+
+        <div class="container">
+
+            <h2>Sobre Mim</h2>
+
+            <p class="section-text">
+
+                Olá! Sou Leonardo Martins,
+                estudante de Análise e Desenvolvimento de Sistemas
+                apaixonado por desenvolvimento Backend.
+
+                Estou focado em criar APIs performáticas,
+                arquiteturas limpas e aplicações escaláveis,
+                buscando constantemente evoluir como desenvolvedor.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Stack -->
+
+    <section id="stack">
+
+        <div class="container">
+
+            <h2>Minha Stack</h2>
+
+            <div class="stack-grid">
+
+                <div class="card">
+    <img src="assets/html.png" alt="HTML">
+
+    <h3>HTML5</h3>
+
+    <div class="skill-level">
+        <span style="width:95%"></span>
+    </div>
+</div>
+
+                <div class="card">
+    <img src="assets/css.png" alt="CSS">
+
+    <h3>CSS3</h3>
+
+    <div class="skill-level">
+        <span style="width:90%"></span>
+    </div>
+</div>
+
+                <div class="card">
+    <img src="assets/js.png" alt="JavaScript">
+
+    <h3>JavaScript</h3>
+
+    <div class="skill-level">
+        <span style="width:88%"></span>
+    </div>
+</div>
+
+                <div class="card">
+    <img src="assets/node.png" alt="Node.js">
+
+    <h3>Node.js</h3>
+
+    <div class="skill-level">
+        <span style="width:85%"></span>
+    </div>
+</div>
+
+                <div class="card">
+    <img src="assets/mysql.png" alt="MySQL">
+
+    <h3>MySQL</h3>
+
+    <div class="skill-level">
+        <span style="width:80%"></span>
+    </div>
+</div>
+
+                <div class="card">
+    <img src="assets/github.png" alt="GitHub">
+
+    <h3>GitHub</h3>
+
+    <div class="skill-level">
+        <span style="width:90%"></span>
+    </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Projetos -->
+
+    <section id="projetos">
+
+    <div class="container">
+
+        <h2>Projetos</h2>
+
+        <div class="projects">
+
+            <div class="project">
+
+                <div class="project-image">
+                    <img src="assets/task-api.png" alt="Task API">
+                </div>
+
+                <div class="project-content">
+
+                    <h3>Task API</h3>
+
+                    <p>
+                        API REST desenvolvida em Node.js,
+                        Express, Prisma e MySQL.
+                    </p>
+
+                    <div class="tags">
+
+                        <span>Node</span>
+                        <span>Prisma</span>
+                        <span>MySQL</span>
+
+                    </div>
+
+                    <div class="project-buttons">
+
+                        <a href="#" class="btn">
+                            GitHub
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
+                <div class="project">
 
-  <section id="habilidades">
-    <h2>Habilidades</h2>
-    <div class="skills">
-      <span onclick="mostrarInfo('html')"><img src="assets/html.png" alt="HTML5" class="icon"> HTML</span>
-      <span onclick="mostrarInfo('css')"><img src="assets/css.png" alt="CSS3" class="icon"> CSS</span>
-      <span onclick="mostrarInfo('js')"><img src="assets/js.png" alt="JavaScript" class="icon"> JavaScript</span>
-      <span onclick="mostrarInfo('python')"><img src="assets/python.png" alt="Python" class="icon"> Python</span>
-      <span onclick="mostrarInfo('java')"><img src="assets/java.png" alt="Java" class="icon"> Java</span>
+                    <div class="project-image"></div>
+
+                    <div class="project-content">
+
+                        <div class="project">
+    <div class="project-image">
+        <img src="assets/portfolio.png" alt="Portfólio">
     </div>
-  </section>
 
-  <section id="projetos">
-    <h2>Meus Projetos</h2>
-    <ul id="listaProjetos"></ul>
-  </section>
+    <div class="project-content">
 
-  <footer>
-  <p>📫 Contato: leonardommp08@email.com</p>
-  <p>
-    <a href="https://github.com/LeonMMP" target="_blank">GitHub</a> | 
-    <a href="https://www.linkedin.com/in/leonardo-martins-0269b33a4" target="_blank">LinkedIn</a>
-  </p>
-</footer>
+        <h3>Portfólio Pessoal</h3>
 
+        <p>
+            Site desenvolvido para apresentar minha trajetória,
+            tecnologias, projetos e evolução como Desenvolvedor Backend.
+        </p>
 
+        <div class="tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+        </div>
 
-  <!-- Modal -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="fechar" onclick="fecharModal()">&times;</span>
-      <h3 id="modalTitulo"></h3>
-      <img id="modalIcon" class="icon-modal" alt="">
-      <p id="modalTexto"></p>
+        <div class="project-buttons">
+
+            <a href="#" class="btn">
+                Em desenvolvimento
+            </a>
+
+        </div>
+
     </div>
-  </div>
 
-  <script src="script.js"></script>
+</div>
+
+    </section>
+
+    <!-- Contato -->
+
+    <section id="contato">
+
+        <div class="container">
+
+            <h2>Vamos conversar?</h2>
+
+            <p>
+
+                Estou disponível para estágio,
+                freelancer e novos desafios.
+
+            </p>
+
+            <div class="social">
+
+                <a href="#"><i class="ri-github-fill"></i></a>
+
+                <a href="#"><i class="ri-linkedin-fill"></i></a>
+
+                <a href="#"><i class="ri-mail-fill"></i></a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+
+            © 2026 Leonardo Martins.
+            Todos os direitos reservados.
+
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+
+    <button id="toTop">
+    ↑
+</button>
+
+<script src="script.js"></script>
 </body>
+
 </html>
