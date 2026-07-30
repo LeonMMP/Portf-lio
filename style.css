@@ -871,7 +871,9 @@ section h2::after{
 
     grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
 
-    gap:35px;
+    gap:50px;
+
+    align-items:stretch;
 
 }
 
@@ -889,11 +891,17 @@ section h2::after{
 
     overflow:hidden;
 
-    transition:.4s;
-
     backdrop-filter:blur(15px);
 
     position:relative;
+
+    transition:.4s;
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
 
 }
 
@@ -913,15 +921,13 @@ section h2::after{
 
     background:linear-gradient(135deg,#1d1d1d,#111,#1d1d1d);
 
+    overflow:hidden;
+
     display:flex;
 
     align-items:center;
 
     justify-content:center;
-
-    position:relative;
-
-    overflow:hidden;
 
 }
 
@@ -937,7 +943,7 @@ section h2::after{
 
 }
 
-.project:hover img{
+.project:hover .project-image img{
 
     transform:scale(1.08);
 
@@ -946,6 +952,12 @@ section h2::after{
 .project-content{
 
     padding:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex:1;
 
 }
 
@@ -963,8 +975,9 @@ section h2::after{
 
     line-height:1.8;
 
-}
+    margin-bottom:25px;
 
+}
 /*==================================================
                     TAGS
 ==================================================*/
@@ -1007,6 +1020,8 @@ section h2::after{
 
     gap:15px;
 
+    margin-top:auto;
+
 }
 
 .project-buttons a{
@@ -1016,31 +1031,22 @@ section h2::after{
     text-align:center;
 
 }
-
 /*==================================================
                 EFEITO HOVER
 ==================================================*/
 
 .project::after{
-
     content:"";
-
     position:absolute;
-
     inset:0;
-
     background:linear-gradient(
-
-    transparent,
-
-    rgba(155,92,255,.04)
-
+        to bottom,
+        transparent 60%,
+        rgba(155,92,255,.04)
     );
-
     opacity:0;
-
     transition:.4s;
-
+    pointer-events:none;
 }
 
 .project:hover::after{
