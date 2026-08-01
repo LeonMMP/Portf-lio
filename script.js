@@ -193,3 +193,65 @@ setInterval(() => {
     }, 300);
 
 }, 3000);
+
+const texts = [
+    "Front-end Developer",
+    "Full Stack Developer",
+    "JavaScript Developer",
+    "Sempre aprendendo 🚀"
+];
+
+let textIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+const typing = document.getElementById("typing");
+
+function typeEffect() {
+    const current = texts[textIndex];
+
+    if (!deleting) {
+        typing.textContent = current.substring(0, charIndex++);
+        if (charIndex > current.length) {
+            deleting = true;
+            setTimeout(typeEffect, 1500);
+            return;
+        }
+    } else {
+        typing.textContent = current.substring(0, charIndex--);
+        if (charIndex < 0) {
+            deleting = false;
+            textIndex = (textIndex + 1) % texts.length;
+        }
+    }
+
+    setTimeout(typeEffect, deleting ? 50 : 90);
+}
+
+typeEffect();
+
+// =============================
+// ANIMAÇÃO DOS PROJETOS
+// =============================
+
+const projectObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+}, {
+    threshold: 0.2
+});
+
+document.querySelectorAll(".fade-project").forEach(project => {
+
+    projectObserver.observe(project);
+
+});
