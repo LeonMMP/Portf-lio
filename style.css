@@ -517,13 +517,17 @@ nav a:hover{
 
     .hero-info{
 
-        justify-content:center;
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
 
     }
 
     .info-card{
 
-        min-width:130px;
+        width:100%;
+        max-width:320px;
+        min-width:0;
 
     }
 
@@ -752,13 +756,10 @@ section h2::after{
 }
 
 .about-cards{
-
     display:grid;
-
     grid-template-columns:repeat(3,1fr);
-
     gap:25px;
-
+    margin-top:40px;
 }
 
 .about-card{
@@ -1693,6 +1694,14 @@ flex-wrap:wrap;
 
 }
 
+.about-cards{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.about-card{
+    width:100%;
+}
+
 }
 
 /*==========================================
@@ -1833,4 +1842,9 @@ font-size:22px;
     color:white;
     font-size:30px;
     transition:.35s;
+}
+
+html,
+body{
+    overflow-x: hidden;
 }
