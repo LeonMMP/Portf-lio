@@ -195,12 +195,10 @@ setInterval(() => {
 }, 3000);
 
 const texts = [
-    "Front-end Developer",
     "Full Stack Developer",
-    "JavaScript Developer",
+    "Criando aplicações modernas",
     "Sempre aprendendo 🚀"
 ];
-
 let textIndex = 0;
 let charIndex = 0;
 let deleting = false;
