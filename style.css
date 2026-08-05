@@ -348,30 +348,6 @@ nav a.active::after{
 
 }
 
-.hero-grid::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:50%;
-
-    top:50%;
-
-    transform:translate(-50%, -50%);
-
-    width:1px;
-
-    height:70%;
-
-    background:linear-gradient(
-        transparent,
-        rgba(255,255,255,.12),
-        transparent
-    );
-
-}
-
 .mini-title{
 
     color:var(--purple);
@@ -1489,11 +1465,13 @@ section h2::after{
 
     margin-top:auto;
 
+    flex-wrap:wrap;
+
 }
 
 .project-buttons a{
 
-    flex:1;
+    flex:1 1 180px;
 
     text-align:center;
 
@@ -1822,11 +1800,37 @@ footer p{
 
 @media(max-width:992px){
 
-.hero-grid{
+.hero-grid::after{
 
-grid-template-columns:1fr;
+    content:"";
 
-text-align:center;
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:1px;
+
+    height:70%;
+
+    background:linear-gradient(
+        transparent,
+        rgba(255,255,255,.12),
+        transparent
+    );
+
+}
+
+@media(max-width:992px){
+
+.hero-grid::after{
+
+display:none;
+
+}
 
 }
 
@@ -1846,7 +1850,9 @@ margin-bottom:40px;
 
 .hero p{
 
-margin:auto;
+    max-width:600px;
+    margin:auto;
+    line-height:1.9;
 
 }
 
@@ -1987,6 +1993,31 @@ flex-wrap:wrap;
         justify-content:center;
 
     }
+
+}
+
+.hero-info{
+
+    flex-direction:row;
+    justify-content:center;
+
+}
+
+.info-card{
+
+    flex:0 1 150px;
+
+}
+
+.project-buttons{
+
+    flex-direction:column;
+
+}
+
+.project-buttons a{
+
+    width:100%;
 
 }
 
