@@ -1798,89 +1798,48 @@ footer p{
             RESPONSIVO
 ==========================================*/
 
-@media(max-width:992px){
+@media (max-width:992px){
 
-.hero-grid::after{
+    .hero-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
 
-    content:"";
+    .hero-grid::after{
+        display:none;
+    }
 
-    position:absolute;
+    .hero-text{
+        order:2;
+    }
 
-    left:50%;
+    .hero-image{
+        order:1;
+        margin-bottom:40px;
+    }
 
-    top:50%;
+    .hero p{
+        max-width:600px;
+        margin:auto;
+        line-height:1.9;
+    }
 
-    transform:translate(-50%,-50%);
+    .hero-buttons{
+        justify-content:center;
+    }
 
-    width:1px;
+    .image-box{
+        width:350px;
+        height:350px;
+    }
 
-    height:70%;
+    .image-box img{
+        width:280px;
+    }
 
-    background:linear-gradient(
-        transparent,
-        rgba(255,255,255,.12),
-        transparent
-    );
-
-}
-
-@media(max-width:992px){
-
-.hero-grid::after{
-
-display:none;
-
-}
-
-}
-
-.hero-text{
-
-order:2;
-
-}
-
-.hero-image{
-
-order:1;
-
-margin-bottom:40px;
-
-}
-
-.hero p{
-
-    max-width:600px;
-    margin:auto;
-    line-height:1.9;
-
-}
-
-.hero-buttons{
-
-justify-content:center;
-
-}
-
-.image-box{
-
-width:350px;
-
-height:350px;
-
-}
-
-.image-box img{
-
-width:280px;
-
-}
-
-nav ul{
-
-gap:20px;
-
-}
+    nav ul{
+        gap:20px;
+    }
 
 }
 
@@ -1993,31 +1952,6 @@ flex-wrap:wrap;
         justify-content:center;
 
     }
-
-}
-
-.hero-info{
-
-    flex-direction:row;
-    justify-content:center;
-
-}
-
-.info-card{
-
-    flex:0 1 150px;
-
-}
-
-.project-buttons{
-
-    flex-direction:column;
-
-}
-
-.project-buttons a{
-
-    width:100%;
 
 }
 
