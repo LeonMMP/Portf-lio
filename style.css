@@ -192,6 +192,45 @@ nav a:hover{
 
 }
 
+nav a.active{
+
+    color: var(--purple);
+
+}
+
+nav a{
+
+    position: relative;
+
+}
+
+nav a::after{
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -8px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--purple);
+
+    transition: .3s;
+
+}
+
+nav a:hover::after,
+nav a.active::after{
+
+    width: 100%;
+
+}
+
 .nav-buttons{
 
     display:flex;
