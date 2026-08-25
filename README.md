@@ -14,4 +14,4 @@ Aqui apresento minhas habilidades, projetos e experiências como Técnico em Des
 - Landing Page Responsiva
 
 ## ⚡ Tecnologias
-HTML | CSS | JavaScript | Python | Java
+HTML | CSS | JavaScript | Java
