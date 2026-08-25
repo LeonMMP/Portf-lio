@@ -2099,3 +2099,111 @@ html,
 body{
     overflow-x: hidden;
 }
+
+/*==========================================
+        AJUSTES DOS PROJETOS
+==========================================*/
+
+.project-image img{
+
+    transition: .5s;
+
+}
+
+.project:hover .project-image img{
+
+    transform: scale(1.05);
+
+}
+
+.project-image{
+
+    min-height:220px;
+
+}
+
+.project-image::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        to bottom,
+        transparent 55%,
+        rgba(0,0,0,.35)
+    );
+
+    pointer-events:none;
+
+}
+
+.project-content p{
+
+    min-height:90px;
+
+}
+
+.project-buttons .btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+}
+
+
+/*==========================================
+        ANIMAÇÃO DOS CARDS DA STACK
+==========================================*/
+
+.card:nth-child(7){
+
+    animation-delay:.7s;
+
+}
+
+.card:nth-child(8){
+
+    animation-delay:.8s;
+
+}
+
+
+/*==========================================
+        PROJETOS - MOBILE
+==========================================*/
+
+@media(max-width:768px){
+
+    .project-image{
+
+        height:200px;
+        min-height:200px;
+
+    }
+
+    .project-content p{
+
+        min-height:auto;
+
+    }
+
+}
+
+@media(max-width:500px){
+
+    .project-image{
+
+        height:180px;
+        min-height:180px;
+
+    }
+
+}
